@@ -8,7 +8,9 @@
       "Bash(gcc -Wall -Wextra -Werror -pedantic _stub_print.c 1-heap_insert.c 0-binary_tree_node.c -o /tmp/heap_test_build)",
       "Bash(rm _stub_print.c)",
       "Bash(gcc -Wall -Wextra -Werror -pedantic -c _stub_print.c 1-heap_insert.c 0-binary_tree_node.c)",
-      "Bash(rm _stub_print.c *.o)"
+      "Bash(rm _stub_print.c *.o)",
+      "Bash(gcc -Wall -Wextra -Werror -pedantic -c _stub.c 1-heap_insert.c 0-binary_tree_node.c)",
+      "Bash(rm _stub.c *.o)"
     ],
     "additionalDirectories": [
       "/home/vscode/holbertonschool-interview"
