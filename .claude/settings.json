@@ -13,7 +13,8 @@
       "Bash(rm _stub.c *.o)",
       "Bash(mkdir -p /home/vscode/holbertonschool-interview/linked_list_palindrome)",
       "Bash(gcc -Wall -Werror -Wextra -pedantic 0-main.c linked_lists.c 0-is_palindrome.c -o palindrome)",
-      "Bash(./palindrome)"
+      "Bash(./palindrome)",
+      "Bash(valgrind ./palindrome)"
     ],
     "additionalDirectories": [
       "/home/vscode/holbertonschool-interview"

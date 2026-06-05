@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "lists.h"
 
 /**
@@ -8,41 +7,56 @@
  */
 int is_palindrome(listint_t **head)
 {
-	listint_t *current;
-	int *arr;
-	size_t len, i;
+	listint_t *slow, *fast, *prev, *next, *second, *p1, *p2;
+	int result;
 
-	if (*head == NULL)
+	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-	len = 0;
-	current = *head;
-	while (current)
+	slow = *head;
+	fast = *head;
+	while (fast->next && fast->next->next)
 	{
-		len++;
-		current = current->next;
+		slow = slow->next;
+		fast = fast->next->next;
 	}
 
-	arr = malloc(sizeof(int) * len);
-	if (!arr)
-		return (0);
+	second = slow->next;
+	slow->next = NULL;
 
-	current = *head;
-	for (i = 0; i < len; i++)
+	prev = NULL;
+	while (second)
 	{
-		arr[i] = current->n;
-		current = current->next;
+		next = second->next;
+		second->next = prev;
+		prev = second;
+		second = next;
 	}
+	second = prev;
 
-	for (i = 0; i < len / 2; i++)
+	result = 1;
+	p1 = *head;
+	p2 = second;
+	while (p2)
 	{
-		if (arr[i] != arr[len - 1 - i])
+		if (p1->n != p2->n)
 		{
-			free(arr);
-			return (0);
+			result = 0;
+			break;
 		}
+		p1 = p1->next;
+		p2 = p2->next;
 	}
 
-	free(arr);
-	return (1);
+	prev = NULL;
+	while (second)
+	{
+		next = second->next;
+		second->next = prev;
+		prev = second;
+		second = next;
+	}
+	slow->next = prev;
+
+	return (result);
 }
