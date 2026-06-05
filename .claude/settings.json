@@ -3,7 +3,12 @@
     "allow": [
       "Bash(find /home/vscode/holbertonschool-interview -name \"binary_trees.h\" 2>/dev/null; find /home/vscode -name \"binary_trees.h\" 2>/dev/null | head -5)",
       "Read(//home/vscode/**)",
-      "Bash(mkdir -p /home/vscode/holbertonschool-interview/heap_insert)"
+      "Bash(mkdir -p /home/vscode/holbertonschool-interview/heap_insert)",
+      "Bash(printf '#include \"binary_trees.h\"\\\\nvoid binary_tree_print\\(const binary_tree_t *t\\){\\(void\\)t;}\\\\n')",
+      "Bash(gcc -Wall -Wextra -Werror -pedantic _stub_print.c 1-heap_insert.c 0-binary_tree_node.c -o /tmp/heap_test_build)",
+      "Bash(rm _stub_print.c)",
+      "Bash(gcc -Wall -Wextra -Werror -pedantic -c _stub_print.c 1-heap_insert.c 0-binary_tree_node.c)",
+      "Bash(rm _stub_print.c *.o)"
     ],
     "additionalDirectories": [
       "/home/vscode/holbertonschool-interview"
