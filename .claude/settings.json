@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /home/vscode/holbertonschool-interview -name \"binary_trees.h\" 2>/dev/null; find /home/vscode -name \"binary_trees.h\" 2>/dev/null | head -5)",
+      "Read(//home/vscode/**)",
+      "Bash(mkdir -p /home/vscode/holbertonschool-interview/heap_insert)"
+    ],
+    "additionalDirectories": [
+      "/home/vscode/holbertonschool-interview"
+    ]
+  }
+}
