@@ -10,7 +10,10 @@
       "Bash(gcc -Wall -Wextra -Werror -pedantic -c _stub_print.c 1-heap_insert.c 0-binary_tree_node.c)",
       "Bash(rm _stub_print.c *.o)",
       "Bash(gcc -Wall -Wextra -Werror -pedantic -c _stub.c 1-heap_insert.c 0-binary_tree_node.c)",
-      "Bash(rm _stub.c *.o)"
+      "Bash(rm _stub.c *.o)",
+      "Bash(mkdir -p /home/vscode/holbertonschool-interview/linked_list_palindrome)",
+      "Bash(gcc -Wall -Werror -Wextra -pedantic 0-main.c linked_lists.c 0-is_palindrome.c -o palindrome)",
+      "Bash(./palindrome)"
     ],
     "additionalDirectories": [
       "/home/vscode/holbertonschool-interview"
