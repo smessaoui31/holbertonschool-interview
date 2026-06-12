@@ -19,6 +19,7 @@ if __name__ == '__main__':
     total_size = 0
     status_counts = {}
     line_count = 0
+    printed_last = False
 
     try:
         for line in sys.stdin:
@@ -31,9 +32,12 @@ if __name__ == '__main__':
             line_count += 1
             if line_count % 10 == 0:
                 print_stats(total_size, status_counts)
+                printed_last = True
+            else:
+                printed_last = False
     except KeyboardInterrupt:
         print_stats(total_size, status_counts)
         raise
 
-    if line_count % 10 != 0:
+    if not printed_last:
         print_stats(total_size, status_counts)
