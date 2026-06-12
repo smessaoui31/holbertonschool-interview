@@ -14,7 +14,12 @@
       "Bash(mkdir -p /home/vscode/holbertonschool-interview/linked_list_palindrome)",
       "Bash(gcc -Wall -Werror -Wextra -pedantic 0-main.c linked_lists.c 0-is_palindrome.c -o palindrome)",
       "Bash(./palindrome)",
-      "Bash(valgrind ./palindrome)"
+      "Bash(valgrind ./palindrome)",
+      "Bash(mkdir -p /home/vscode/holbertonschool-interview/log_parsing)",
+      "Bash(chmod +x /home/vscode/holbertonschool-interview/log_parsing/0-stats.py)",
+      "Bash(python3 -c ' *)",
+      "Bash(/home/vscode/holbertonschool-interview/log_parsing/0-stats.py)",
+      "Bash(python3 -c \"import sys; sys.path.insert\\(0, '/home/vscode/holbertonschool-interview/log_parsing'\\); import importlib; m = importlib.import_module\\('0-stats'\\); print\\('imported ok, no output above'\\)\")"
     ],
     "additionalDirectories": [
       "/home/vscode/holbertonschool-interview"
