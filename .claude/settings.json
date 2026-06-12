@@ -19,7 +19,8 @@
       "Bash(chmod +x /home/vscode/holbertonschool-interview/log_parsing/0-stats.py)",
       "Bash(python3 -c ' *)",
       "Bash(/home/vscode/holbertonschool-interview/log_parsing/0-stats.py)",
-      "Bash(python3 -c \"import sys; sys.path.insert\\(0, '/home/vscode/holbertonschool-interview/log_parsing'\\); import importlib; m = importlib.import_module\\('0-stats'\\); print\\('imported ok, no output above'\\)\")"
+      "Bash(python3 -c \"import sys; sys.path.insert\\(0, '/home/vscode/holbertonschool-interview/log_parsing'\\); import importlib; m = importlib.import_module\\('0-stats'\\); print\\('imported ok, no output above'\\)\")",
+      "Bash(./0-stats.py)"
     ],
     "additionalDirectories": [
       "/home/vscode/holbertonschool-interview"
