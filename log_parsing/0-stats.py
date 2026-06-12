@@ -5,7 +5,7 @@ import re
 
 VALID_CODES = {200, 301, 400, 401, 403, 404, 405, 500}
 PATTERN = re.compile(
-    r'^\d+\.\d+\.\d+\.\d+ - \[.+\] "GET /projects/260 HTTP/1\.1" (\d+) (\d+)$'
+    r'^\S+\s+-\s+\[.+\]\s+"GET /projects/260 HTTP/1\.1"\s+(\d+)\s+(\d+)$'
 )
 
 
