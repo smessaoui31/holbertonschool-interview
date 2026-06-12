@@ -8,6 +8,7 @@ PATTERN = re.compile(
     r'^\d+\.\d+\.\d+\.\d+ - \[.+\] "GET /projects/260 HTTP/1\.1" (\d+) (\d+)$'
 )
 
+
 def print_stats(total_size, status_counts):
     """Print accumulated metrics to stdout."""
     print("File size: {}".format(total_size))

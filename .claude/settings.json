@@ -20,7 +20,15 @@
       "Bash(python3 -c ' *)",
       "Bash(/home/vscode/holbertonschool-interview/log_parsing/0-stats.py)",
       "Bash(python3 -c \"import sys; sys.path.insert\\(0, '/home/vscode/holbertonschool-interview/log_parsing'\\); import importlib; m = importlib.import_module\\('0-stats'\\); print\\('imported ok, no output above'\\)\")",
-      "Bash(./0-stats.py)"
+      "Bash(./0-stats.py)",
+      "Bash(pycodestyle 0-stats.py)",
+      "Bash(pep8 0-stats.py)",
+      "Bash(python3 -m pycodestyle 0-stats.py)",
+      "Bash(pip install *)",
+      "Bash(pip3 install *)",
+      "Bash(python3 -m pip install pycodestyle==1.7.1 -q)",
+      "Bash(python3 -m pycodestyle /home/vscode/holbertonschool-interview/log_parsing/0-stats.py)",
+      "Bash(awk 'length > 79 {print NR\": \"length\" chars: \"$0}' /home/vscode/holbertonschool-interview/log_parsing/0-stats.py)"
     ],
     "additionalDirectories": [
       "/home/vscode/holbertonschool-interview"
