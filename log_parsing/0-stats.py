@@ -23,7 +23,7 @@ if __name__ == '__main__':
 
     try:
         for line in sys.stdin:
-            m = PATTERN.match(line.rstrip('\n'))
+            m = PATTERN.match(line.rstrip('\r\n'))
             if m:
                 status = int(m.group(1))
                 total_size += int(m.group(2))
