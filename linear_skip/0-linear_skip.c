@@ -1,29 +1,26 @@
 #include "search.h"
 
 /**
- * linear_skip - Searches for a value in a sorted skip list of integers
- * using the express lane to narrow down the search range.
+ * find_boundary - Walks the express lane of a skip list to find the
+ * pair of nodes bounding the range where value may be located
  * @list: Pointer to the head of the skip list to search in
  * @value: Value to search for
+ * @prev: Pointer to store the lower-bound node of the range
  *
- * Return: Pointer to the first node where value is located, or NULL if
- * value is not present in list or if list is NULL
+ * Return: Pointer to the upper-bound node of the range
  */
-skiplist_t *linear_skip(skiplist_t *list, int value)
+static skiplist_t *find_boundary(skiplist_t *list, int value,
+				  skiplist_t **prev)
 {
-	skiplist_t *prev, *cur, *boundary, *node;
+	skiplist_t *cur = list->express;
+	skiplist_t *boundary;
 
-	if (list == NULL)
-		return (NULL);
-
-	prev = list;
-	cur = list->express;
-
+	*prev = list;
 	while (cur != NULL && cur->n < value)
 	{
 		printf("Value checked at index [%lu] = [%d]\n",
 		       cur->index, cur->n);
-		prev = cur;
+		*prev = cur;
 		cur = cur->express;
 	}
 
@@ -35,13 +32,34 @@ skiplist_t *linear_skip(skiplist_t *list, int value)
 	}
 	else
 	{
-		boundary = prev;
+		boundary = *prev;
 		while (boundary->next != NULL)
 			boundary = boundary->next;
 	}
 
 	printf("Value found between indexes [%lu] and [%lu]\n",
-	       prev->index, boundary->index);
+	       (*prev)->index, boundary->index);
+
+	return (boundary);
+}
+
+/**
+ * linear_skip - Searches for a value in a sorted skip list of integers
+ * using the express lane to narrow down the search range
+ * @list: Pointer to the head of the skip list to search in
+ * @value: Value to search for
+ *
+ * Return: Pointer to the first node where value is located, or NULL if
+ * value is not present in list or if list is NULL
+ */
+skiplist_t *linear_skip(skiplist_t *list, int value)
+{
+	skiplist_t *prev, *boundary, *node;
+
+	if (list == NULL)
+		return (NULL);
+
+	boundary = find_boundary(list, value, &prev);
 
 	for (node = prev; node != NULL; node = node->next)
 	{
